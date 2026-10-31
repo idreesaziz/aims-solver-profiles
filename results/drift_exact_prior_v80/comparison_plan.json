@@ -1,0 +1,33 @@
+{
+  "seeds": [
+    800,
+    801,
+    802
+  ],
+  "cohorts": [
+    1,
+    3,
+    10
+  ],
+  "budgets": [
+    0,
+    1,
+    3,
+    7,
+    15,
+    31
+  ],
+  "methods": [
+    "drift_prior_drift_update",
+    "drift_prior_our52_update",
+    "drift_prior_our70_update",
+    "our52",
+    "our70"
+  ],
+  "prior_artifact_sha": "26d09392c4e1f8152342820965e5686b7dabeb58e8d4150df59b9f0498377643",
+  "script_sha": "d7e655801819e2eb227fd69e0cc821c5c7ed0cb6758a43b70f214c2dec4cc087",
+  "metadata": "Aligned bank model name; harness lm-evaluation-harness; other runtime fields unavailable and empty. Not guaranteed identical to hosted metadata.",
+  "limitations": "Known direct core relatives excluded from broad source fit. Other cross-source item duplicates not certified absent. Inspected public development, not official. Training prior uses public subject identities; no claim of unseen-name training.",
+  "paid_calls": 0,
+  "submission_changed": false
+}

@@ -1,0 +1,46 @@
+{
+  "question_vector_numbers": 4,
+  "architecture": "masked signed outcomes + observed indicators ->128 GELU ->64 GELU ->4; sigmoid linear solver readout",
+  "loss": "observed-cell expected binary Brier, equal per-question weights; full pool weighted by question counts",
+  "conditions": [
+    "aligned_panel_only",
+    "full_masked_pool"
+  ],
+  "training_seeds": [
+    0,
+    1
+  ],
+  "acquisition_seeds": 5,
+  "heldout_original_models": [
+    108,
+    204,
+    162,
+    119,
+    37,
+    7,
+    148,
+    46,
+    50,
+    161,
+    75,
+    167,
+    157,
+    209,
+    26,
+    213,
+    107,
+    38,
+    158,
+    81,
+    214,
+    20,
+    86,
+    89
+  ],
+  "question_inputs": "historical solver outcomes only, never question text",
+  "evaluation": "same old six folds, test questions,24 targets and support/evaluation random seeds; source-calibration checkpoints only",
+  "removed_old_question_rows": "Two previously quarantined contradictory-reference rows (original IDs261,409) absent from the cleaned panel; removed identically in both conditions. Remaining19,347 old rows retain order.",
+  "four_numbers": "one question offset plus three interaction coordinates; four adaptive solver parameters including ability",
+  "code_sha256": "0fb5a9e2abd6713fffbd999d284397ac81ad5846f1a84c7c11ee4ccaf2b65b35",
+  "caveat": "Shared masked encoder is tested; disconnected source IDs do not guarantee aligned latent coordinates. Exploratory previously examined evaluation folds. Frozen records can contain repeated empirical rates."
+}

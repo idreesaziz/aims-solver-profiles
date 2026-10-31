@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "all_evaluation_rows_current_validation": true,
+  "source_groups_disjoint": true,
+  "held_solvers_excluded_from_prior": true,
+  "source_choices_frozen_before_outcome_access": true,
+  "fullrotation_logit_error": 5.329070518200751e-15,
+  "fullrotation_brier_reproduced_all_cohorts": true,
+  "budgets": [
+    0,
+    1,
+    3,
+    7,
+    15,
+    31
+  ],
+  "seeds": 10,
+  "all_model_records": 432000,
+  "training_changed": false,
+  "protected_test_used": false
+}

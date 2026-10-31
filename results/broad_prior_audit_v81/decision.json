@@ -1,0 +1,13 @@
+{
+  "selected": "neutral",
+  "initial_success_probability": 0.5,
+  "adaptation": "unchanged API-free v74 branch, kappa.25 pseudo4 solver_ridge16 Brier_stack_penalty1",
+  "validation_benchmarks": 43,
+  "source_groups": 41,
+  "pair_episodes": 311,
+  "scope": "52-feature API-free prior only; full70 not evaluated on broad sources because demand annotations unavailable. Public development validation, not official test.",
+  "result": "Neutral substantially improves early Brier and ALC versus existing52-feature forest; similar to Drift prior.",
+  "new_paid_calls": 0,
+  "submission_changed": false,
+  "verification_passed": true
+}

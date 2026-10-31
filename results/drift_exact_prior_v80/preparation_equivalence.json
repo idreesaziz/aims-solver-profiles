@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "fixtures": [
+    {
+      "benchmark": "advprompter",
+      "selected_rows": 100,
+      "exact_arrays": true
+    },
+    {
+      "benchmark": "agentic_review_perturbation",
+      "selected_rows": 315,
+      "exact_arrays": true
+    },
+    {
+      "benchmark": "abstract_reason",
+      "selected_rows": 9089,
+      "exact_arrays": true
+    }
+  ]
+}

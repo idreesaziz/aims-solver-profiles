@@ -1,0 +1,91 @@
+{
+  "scope": "Post-hoc analysis of inspected PUBLIC validation; no new candidate fitted or evaluated. Query-derived rate/bias terms are diagnostics and cannot be deployed.",
+  "neutral_vs_drift_cluster_bootstrap": {
+    "1": {
+      "neutral_minus_drift": -0.0016144397329322894,
+      "interval95": [
+        -0.0049531673373390825,
+        0.0014565477090787786
+      ],
+      "groups": 41,
+      "pair_episodes": 86,
+      "source_wins": 20
+    },
+    "3": {
+      "neutral_minus_drift": -0.0007296152474609035,
+      "interval95": [
+        -0.0025769820246521833,
+        0.00110132345959346
+      ],
+      "groups": 41,
+      "pair_episodes": 225,
+      "source_wins": 21
+    }
+  },
+  "prior_decomposition": {
+    "1": {
+      "brier": 0.25774119316811195,
+      "uncertainty": 0.1855948009997966,
+      "mean_bias_squared": 0.07218662637085466,
+      "prediction_variance": 1.687651439718884e-06,
+      "twice_covariance": 4.192185397897034e-05,
+      "centered_excess": -4.0234202539251444e-05,
+      "pairs": 86,
+      "negative_covariance_pair_fraction": 0.3953488372093023,
+      "mixed_outcome_pairs": 84,
+      "mean_auroc_mixed_pairs": 0.5128982854152402,
+      "median_auroc_mixed_pairs": 0.5131416972768957,
+      "mean_logit_std": 0.00457324193743234,
+      "overlap": {
+        "0": 0.0,
+        "1": 0.0,
+        "3": 0.0,
+        "7": 0.0,
+        "15": 0.0,
+        "31": 0.0
+      }
+    },
+    "3": {
+      "brier": 0.25345891568162837,
+      "uncertainty": 0.18398645460320906,
+      "mean_bias_squared": 0.06954488656037185,
+      "prediction_variance": 1.615598465466112e-06,
+      "twice_covariance": 7.404108041801076e-05,
+      "centered_excess": -7.242548195254466e-05,
+      "pairs": 225,
+      "negative_covariance_pair_fraction": 0.3466666666666667,
+      "mixed_outcome_pairs": 220,
+      "mean_auroc_mixed_pairs": 0.5249772761465171,
+      "median_auroc_mixed_pairs": 0.528625627684321,
+      "mean_logit_std": 0.004490211399112538,
+      "overlap": {
+        "0": 0.0,
+        "1": 0.0029321538684151526,
+        "3": 0.007137543233793115,
+        "7": 0.017649140204354017,
+        "15": 0.03795730077919303,
+        "31": 0.07436133822577991
+      }
+    }
+  },
+  "hosted_arithmetic": {
+    "current_alc": 0.190208375,
+    "replace_only_B0_with_half": 0.1874194875,
+    "needed_gain_for_point17": 0.020208375,
+    "weighted_difference_from_flat_point17": {
+      "0": 0.010788887499999997,
+      "1": 0.009879725,
+      "3": 0.0032623749999999953,
+      "7": -0.0006565000000000043,
+      "15": -0.0016367000000000022,
+      "31": -0.001429412500000002
+    }
+  },
+  "input_sha256": {
+    "v81_validation_records.json": "a8a2192e5b1eefd437e0338589b52ad49001769f4c858277210da87e6341e460",
+    "plan.json": "522e634e4d630fd2276317688c30e98a7318a28bf8bc6ad295bc79cbb2b69cbd"
+  },
+  "paid_calls": 0,
+  "training": false,
+  "production_changes": false
+}

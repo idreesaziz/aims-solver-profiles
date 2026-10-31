@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "aggregate_max_error": 8.326672684688674e-17,
+  "selection_verified": true,
+  "source_groups_disjoint": true,
+  "own_support_query_text_disjoint": true,
+  "validation_bootstrap": {
+    "1:drift": {
+      "delta": -0.1248322648466676,
+      "interval95": [
+        -0.16518133345211358,
+        -0.07990984620026184
+      ],
+      "source_groups": 41
+    },
+    "1:neutral": {
+      "delta": -0.12860066290443586,
+      "interval95": [
+        -0.1697535356758384,
+        -0.08785949752021571
+      ],
+      "source_groups": 41
+    },
+    "1:ours": {
+      "delta": 0.0,
+      "interval95": [
+        0.0,
+        0.0
+      ],
+      "source_groups": 41
+    },
+    "3:drift": {
+      "delta": -0.10409491589694458,
+      "interval95": [
+        -0.1320969462677961,
+        -0.07556794439632482
+      ],
+      "source_groups": 41
+    },
+    "3:neutral": {
+      "delta": -0.10582944266890905,
+      "interval95": [
+        -0.13444054133393846,
+        -0.07567655288292335
+      ],
+      "source_groups": 41
+    },
+    "3:ours": {
+      "delta": 0.0,
+      "interval95": [
+        0.0,
+        0.0
+      ],
+      "source_groups": 41
+    }
+  },
+  "validation_alc_bootstrap": {
+    "1:drift": {
+      "delta": -0.06154216283262095,
+      "interval95": [
+        -0.08168997250534672,
+        -0.03987329347745976
+      ],
+      "source_groups": 41
+    },
+    "1:neutral": {
+      "delta": -0.06315660256555324,
+      "interval95": [
+        -0.08308031599478713,
+        -0.04264912588376471
+      ],
+      "source_groups": 41
+    },
+    "1:ours": {
+      "delta": 0.0,
+      "interval95": [
+        0.0,
+        0.0
+      ],
+      "source_groups": 41
+    },
+    "3:drift": {
+      "delta": -0.04363248256512364,
+      "interval95": [
+        -0.05574208846449213,
+        -0.032066683622847036
+      ],
+      "source_groups": 41
+    },
+    "3:neutral": {
+      "delta": -0.04436209781258455,
+      "interval95": [
+        -0.05614012877961698,
+        -0.0318133096217162
+      ],
+      "source_groups": 41
+    },
+    "3:ours": {
+      "delta": 0.0,
+      "interval95": [
+        0.0,
+        0.0
+      ],
+      "source_groups": 41
+    }
+  }
+}

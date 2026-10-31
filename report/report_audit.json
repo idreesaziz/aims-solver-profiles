@@ -1,0 +1,59 @@
+{
+  "revision": "v89",
+  "pages": 12,
+  "main_pages": 7,
+  "figures": 7,
+  "monochrome_vector_figures": true,
+  "author": "Idrees Aziz",
+  "affiliation": null,
+  "main_results": [
+    "submitted probability pooling",
+    "privileged four-coordinate oracle"
+  ],
+  "local_main_alc": 0.15134356785219724,
+  "oracle_brier31": 0.04692800721122531,
+  "hosted_brier_alc": 0.190208,
+  "hosted_brier31": 0.155705875,
+  "official_submission_id": 1022433,
+  "headline_numbers_in_abstract": 1,
+  "reference_keys_verified": [
+    "aims",
+    "beta",
+    "db",
+    "drift",
+    "stacking"
+  ],
+  "no_overfull_or_undefined_references": true,
+  "all_pages_visually_inspected": true,
+  "visual_qa": {
+    "full_page_dpi": 150,
+    "figure_dpi": 220,
+    "pages": 12,
+    "figures": 7,
+    "page_render_sha256": {
+      "page-01.png": "dce5c7807f47c914798d22982c49c10e368089afad129c500b0087e9f1c11274",
+      "page-02.png": "5209f771de1f4c76ad2b0c64d0cccb8c13bd12d3dd2ceaa520bfe1690dd4142d",
+      "page-03.png": "eac6f0e0e74a5cf5a7ead03e38337dafa8466a59bd04494beb6204d5b36a85f8",
+      "page-04.png": "1e98cccc4542b986144eb78af438eb910f6540b5c125883eb880f4e29b9f0030",
+      "page-05.png": "57b145e4d1547d20b6d7ab40e1838e9f3429c94b808fdb282117ed93a675190c",
+      "page-06.png": "e1d916818d0cabde99b395a18ad0024c881ab5f255e71d078a24d2275b3e609d",
+      "page-07.png": "c9b860857f18f58112625e8e228babe7d1e6501505d39db305b587d305f1d24a",
+      "page-08.png": "b0abf65bda52ae57239c10d0455503a89ca7341df3e3565f53060356c0b540cb",
+      "page-09.png": "3577a66532d0f1ac8598688aa909ca803e8439cfb4cdf24c3727ccc817bd1332",
+      "page-10.png": "dbbee4f55ba2de99179512ee95d79771a22f7fa233ecc4eedaea8ecc27a0d118",
+      "page-11.png": "c68ba418ef4e03c1f83b12c0a9d2be1bd6efd9824f2e67457be6f40756f2ab77",
+      "page-12.png": "3f983d67ac74666eb667696115da7b9f1795c7b45aa1a20198de5adc2d1aebb8"
+    },
+    "text_within_page": true,
+    "all_fonts_embedded": true,
+    "notes": "All pages and seven figure close-ups visually inspected; no remaining visible overlaps or clipping."
+  },
+  "inference_smoke_test_probability": 0.4879724506760002,
+  "pdf_sha256": "bc17823537f3340532cb115b6a7ab97a088758407d4991021566101f35fb526e",
+  "submitted_archive_sha256": "b0aef886620c7ba3545ab7b132336b969079ee5160d758d67125703b51a9ffd1",
+  "report_submitted": false,
+  "approval_required_before_report_submission": true,
+  "public_code_release": "https://github.com/idreesaziz/aims-solver-profiles",
+  "release_url_pending": false,
+  "updated_turkey": "2026-10-31T20:44:40.174170+03:00"
+}

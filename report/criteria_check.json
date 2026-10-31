@@ -1,0 +1,42 @@
+{
+  "official_source": "https://aims.stanford.edu/competition/",
+  "adapted_guidelines": "https://neurips.cc/Conferences/2026/EvaluationsDatasetsReviewerGuidelines",
+  "checked_date": "2026-10-31",
+  "format": {
+    "requirement": "Approximately 4-8 main pages in NeurIPS template; references and appendices excluded; anonymity not required",
+    "status": "met",
+    "main_pages": 7,
+    "references_pages": 1,
+    "appendix_pages": 4
+  },
+  "clarity": {
+    "status": "revised",
+    "evidence": "Two central results, seven monochrome vector figures; exact specification moved to appendix"
+  },
+  "soundness": {
+    "status": "documented",
+    "evidence": "Equations checked against runtime; self-influence exclusions; fixed-prior matched controls; local/hosted/oracle protocols distinguished"
+  },
+  "analysis": {
+    "status": "documented",
+    "evidence": "1/3/10 solver learning curves; paired core benchmark effects; broad43-source validation with whole-source-group bootstrap intervals; complete hosted budget curve"
+  },
+  "data": {
+    "status": "documented",
+    "evidence": "167-source deployment fit, pinned revision, count summaries, source-group exclusions, duplicate limitations, access terms"
+  },
+  "reproducibility": {
+    "status": "public_release_with_documented_input_requirements",
+    "evidence": "Fitted archive, portable prior trainer, metric records and aggregation verifier; archived experiment input requirements documented",
+    "public_repository": "https://github.com/idreesaziz/aims-solver-profiles",
+    "remaining": "Archived representation experiments require rebuilding the aligned panels and original data-preparation caches."
+  },
+  "attribution": {
+    "status": "documented",
+    "evidence": "Team Drift prior and baseline credited, MIT retained; standard statistical tools distinguished from integration; assistant use disclosed"
+  },
+  "publication": {
+    "status": "not_submitted",
+    "user_review_required": true
+  }
+}

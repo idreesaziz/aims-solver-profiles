@@ -1,0 +1,11 @@
+{
+  "original_trainer_match_max_errors": {
+    "b": 5.967448757360216e-16,
+    "ws": 0.0,
+    "wi": 0.0,
+    "idf": 0.0
+  },
+  "fixtures": 3,
+  "network_calls": 0,
+  "passed": true
+}

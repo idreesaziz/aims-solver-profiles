@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the report."
+title: "Predicting Unfamiliar Solvers with Cross-Fitted Probability Pooling"
+authors:
+  - family-names: Aziz
+    given-names: Idrees
+    email: idrees.mustafa.aziz@gmail.com
+date-released: 2026-10-31
+url: https://github.com/idreesaziz/aims-solver-profiles
+license: MIT

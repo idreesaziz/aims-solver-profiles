@@ -1,0 +1,47 @@
+{
+  "core_questions": 70952,
+  "auxiliary_questions": 361141,
+  "distinct_core_seen": 70952,
+  "distinct_aux_seen": 361141,
+  "steps": 900,
+  "checkpoint_step": 900,
+  "calibration_brier": 0.034647804616931614,
+  "curve": [
+    {
+      "step": 100,
+      "calibration_brier": 0.04320517738270237
+    },
+    {
+      "step": 200,
+      "calibration_brier": 0.04081707933702451
+    },
+    {
+      "step": 300,
+      "calibration_brier": 0.03886120236406271
+    },
+    {
+      "step": 400,
+      "calibration_brier": 0.03652818261667764
+    },
+    {
+      "step": 500,
+      "calibration_brier": 0.03568354422685664
+    },
+    {
+      "step": 600,
+      "calibration_brier": 0.035212710208585504
+    },
+    {
+      "step": 700,
+      "calibration_brier": 0.03494262713958108
+    },
+    {
+      "step": 800,
+      "calibration_brier": 0.034776284648338575
+    },
+    {
+      "step": 900,
+      "calibration_brier": 0.034647804616931614
+    }
+  ]
+}
