@@ -13,13 +13,36 @@ How well can an AI solver answer a new question after we’ve seen just a few of
 
 ## Results
 
-| Evaluation | Brier ALC ↓ | Brier at 31 answers ↓ |
-|:--|--:|--:|
-| **Hosted Codabench · submission 1022433** | **0.190208** | **0.155706** |
-| Local development · benchmark excluded, ten solvers | 0.151344 | 0.071451 |
-| Oracle diagnostic · four-coordinate question positions | — | 0.046928 |
+<div align="center">
+<table align="center">
+  <thead>
+    <tr>
+      <th align="left" scope="col">Evaluation</th>
+      <th align="center" scope="col">Brier ALC ↓</th>
+      <th align="center" scope="col">Brier @ 31 ↓</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hosted Codabench</strong><br><sub>Submission 1022433</sub></td>
+      <td align="center"><strong>0.190208</strong></td>
+      <td align="center"><strong>0.155706</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Local development</strong><br><sub>Ten-solver cohort</sub></td>
+      <td align="center">0.151344</td>
+      <td align="center">0.071451</td>
+    </tr>
+    <tr>
+      <td><strong>Oracle diagnostic</strong><br><sub>Four question coordinates</sub></td>
+      <td align="center">—</td>
+      <td align="center">0.046928</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-Lower scores are better. The banner shows the [hosted budget means](results/hosted_budget_means.json), with evaluated budgets spaced evenly. The three rows use different protocols. The oracle locates questions using historical answers. Recovering those positions from new question text remains open. The [paper](report/aims_report.pdf) gives the protocols, paired comparisons, and confidence intervals.
+Lower scores are better. The endpoint uses 31 revealed answers. The banner shows the [hosted budget means](results/hosted_budget_means.json), with evaluated budgets spaced evenly. The three rows use different protocols. The oracle locates questions using historical answers. Recovering those positions from new question text remains open. The [paper](report/aims_report.pdf) gives the protocols, paired comparisons, and confidence intervals.
 
 ## Run locally
 
@@ -53,13 +76,23 @@ The archive check compares 168 reference cases in isolation. The results script 
 
 ## Repository guide
 
-| Path | Contents |
-|:--|:--|
-| [`report/`](report/) | Paper, LaTeX source, and figures |
-| [`submission/`](submission/) | Exact Codabench archive and SHA-256 checksum |
-| [`results/`](results/) | Development scores, frozen splits, oracle records, and hosted budget means |
-| [`research/`](research/) | Original analysis and representation-training code |
-| [`artifacts/oracle/`](artifacts/oracle/) | Fitted representation arrays, source roles, and solver-identity audit |
+<div align="center">
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center" scope="col">Path</th>
+      <th align="left" scope="col">Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td align="center"><a href="report/"><code>report/</code></a></td><td>Paper, LaTeX source, and figures</td></tr>
+    <tr><td align="center"><a href="submission/"><code>submission/</code></a></td><td>Exact Codabench archive and SHA-256 checksum</td></tr>
+    <tr><td align="center"><a href="results/"><code>results/</code></a></td><td>Scores, splits, oracle records, and hosted budget means</td></tr>
+    <tr><td align="center"><a href="research/"><code>research/</code></a></td><td>Analysis and representation-training code</td></tr>
+    <tr><td align="center"><a href="artifacts/oracle/"><code>artifacts/oracle/</code></a></td><td>Fitted arrays, source roles, and solver-identity audit</td></tr>
+  </tbody>
+</table>
+</div>
 
 The root runtime files and fitted payload match the submitted archive. Hidden item-level outcomes are withheld. Raw benchmark texts and response tables are available through their original sources.
 
