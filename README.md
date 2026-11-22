@@ -1,5 +1,9 @@
+<h1 align="center">Predicting Unfamiliar Solvers</h1>
+
+<p align="center"><em>Cross-fitted probability pooling</em></p>
+
 <p align="center">
-  <img src="docs/hosted-learning-curve.png" alt="Predicting Unfamiliar Solvers. Hosted Codabench Brier score drops from 0.2779 with zero revealed answers to 0.1557 with 31. Brier ALC is 0.1902." width="100%">
+  <strong>AIMS / NeurIPS 2026 PAIEC</strong> &nbsp;·&nbsp; Codabench submission <code>1022433</code>
 </p>
 
 <p align="center">
@@ -42,7 +46,7 @@ How well can an AI solver answer a new question after we’ve seen just a few of
 </table>
 </div>
 
-Lower scores are better. The endpoint uses 31 revealed answers. The banner shows the [hosted budget means](results/hosted_budget_means.json), with evaluated budgets spaced evenly. The three rows use different protocols. The oracle locates questions using historical answers. Recovering those positions from new question text remains open. The [paper](report/aims_report.pdf) gives the protocols, paired comparisons, and confidence intervals.
+Lower scores are better. The endpoint uses 31 revealed answers. The [hosted budget means](results/hosted_budget_means.json) cover all six answer budgets. The three rows use different protocols. The oracle locates questions using historical answers. Recovering those positions from new question text remains open. The [paper](report/aims_report.pdf) gives the protocols, paired comparisons, and confidence intervals.
 
 ## Run locally
 
