@@ -1,62 +1,89 @@
-# Predicting unfamiliar solvers with cross-fitted probability pooling
+<h1 align="center">Predicting Unfamiliar Solvers</h1>
+<p align="center"><strong>Cross-Fitted Probability Pooling</strong></p>
+<p align="center">AIMS / NeurIPS 2026 PAIEC · Codabench submission <code>1022433</code></p>
+<p align="center">
+  <a href="report/aims_report.pdf"><strong>Read the paper</strong></a> ·
+  <a href="#quickstart">Run the model</a> ·
+  <a href="submission/">Get the submission</a> ·
+  <a href="REPRODUCING.md">Reproduce the results</a>
+</p>
 
-**Idrees Aziz** · idrees.mustafa.aziz@gmail.com
+---
 
-Code, fitted model and report for the AIMS / NeurIPS 2026 PAIEC competition.
-The predictor starts from Team Drift's reproduced metadata/text prior, pools
-currently revealed answers across solvers, and combines two adapted probability
-estimates through support-only Brier stacking.
+How likely is an unfamiliar solver to answer a question correctly after seeing only a handful of its answers? This predictor starts from a prior based on solver metadata and question text, then adapts as answers are revealed. It shares question-level evidence across solvers and combines two adapted probabilities using a weight fitted on held-out revealed answers.
 
 ## Results
 
-| Evaluation | Brier ALC | Brier after 31 answers |
-|---|---:|---:|
-| Codabench submission **1022433** | **0.190208** | **0.155706** |
-| Local benchmark-excluded, ten-solver development | 0.151344 | 0.071451 |
-| Privileged four-coordinate question positions | — | 0.046928 |
+| Evaluation | Brier ALC ↓ | Brier after 31 answers ↓ |
+|:--|--:|--:|
+| **Hosted Codabench · submission 1022433** | **0.190208** | **0.155706** |
+| Local benchmark-excluded development · ten solvers | 0.151344 | 0.071451 |
+| Oracle diagnostic · four-coordinate question positions | — | 0.046928 |
 
-The rows use different evaluation protocols. The last row uses historical
-answers to locate questions; predicting those positions from new question text
-remains an open problem. Full protocols, paired comparisons and confidence
-intervals are in the [report](report/aims_report.pdf).
+Lower is better. Brier ALC summarizes the learning curve across answer budgets. The 31-answer score measures its endpoint.
 
-## Run the submitted predictor
+> [!NOTE]
+> Each row uses a different evaluation protocol. The oracle uses historical answers to locate questions. Predicting those positions from new question text remains an open problem. The [paper](report/aims_report.pdf) details the protocols, paired comparisons, and confidence intervals.
 
-Python 3.11+ and NumPy/SciPy are sufficient. No API key, GPU or network is needed.
+## How it works
+
+```mermaid
+flowchart LR
+    A["Solver metadata and question text"] --> B["Reproduced Team Drift prior"]
+    B --> D["Team Drift adaptation"]
+    B --> P["Cross-fitted pooling and solver calibration"]
+    C["Revealed answers"] --> D
+    C --> P
+    C --> W["Held-out support answers"]
+    D --> E["Brier stacking"]
+    P --> E
+    W --> E
+    E --> F["Probability of a correct answer"]
+```
+
+When calibrating against a revealed answer, the benchmark shift leaves out the entire item and the pooling counts leave out that answer. The stacking weight is then selected by scoring the two adapted estimates on held-out support answers.
+
+## Quickstart
+
+Install the runtime dependencies with Python 3.11 or newer, then run the smoke test. Inference runs on CPU and works offline once NumPy and SciPy are installed.
 
 ```bash
 python -m pip install -r requirements.txt
 python scripts/smoke_test.py
+```
+
+Call `model.predict([subject, item], labeled)` to get a Python float between 0 and 1. Each entry in `labeled` has the form `[[subject, item], outcome]`, where the outcome is 0 or 1. The [smoke test](scripts/smoke_test.py) includes a complete synthetic example and checks deterministic predictions and benchmark isolation with network access blocked.
+
+<details>
+<summary><strong>Check the exact submitted archive and reproduce the result tables</strong></summary>
+
+```bash
+python scripts/check_submission.py
 python -m pip install -r requirements-research.txt
 python scripts/verify_results.py
 ```
 
-`model.predict([subject, item], labeled)` returns a Python float. Each labeled
-entry is `[[subject, item], outcome]`. See the smoke test for complete synthetic
-inputs. The exact uploaded archive and its SHA-256 are in [submission/](submission/).
-The root runtime files and payload match that archive; the repository README and
-requirements provide additional release instructions.
+The archive check runs 168 reference cases in isolation. The results script recomputes reported statistics from released records. See the [reproduction guide](REPRODUCING.md) for prior training and the prerequisites for the original experiments.
 
-## Reproduction
+</details>
 
-* [REPRODUCING.md](REPRODUCING.md): inference, prior training, result aggregation,
-  confidence intervals and requirements for the original experiments.
-* [results/](results/): public development scores, frozen splits, oracle records
-  and hosted budget means. No hidden item-level outcomes are distributed.
-* [research/](research/): original analysis and representation-training source.
-* [artifacts/oracle/](artifacts/oracle/): fitted numerical representation arrays,
-  source roles and solver-identity audit.
+## Repository guide
 
-## Attribution
+| Path | What's inside |
+|:--|:--|
+| [`report/`](report/) | Paper, LaTeX source, and figures |
+| [`submission/`](submission/) | Exact Codabench upload and its SHA-256 checksum |
+| [`results/`](results/) | Development scores, frozen splits, oracle records, and hosted budget means |
+| [`research/`](research/) | Original analysis and representation-training code |
+| [`artifacts/oracle/`](artifacts/oracle/) | Fitted representation arrays, source roles, and solver-identity audit |
+| [`REPRODUCING.md`](REPRODUCING.md) | Inference checks, prior training, statistical verification, and experiment prerequisites |
 
-The initial logistic prior, feature hashing and Gaussian baseline come from
-[Team Drift](https://github.com/cloudlabworks/aims-team-drift), Alex Alvord /
-Cloud Lab Works LLC, commit `5a67dfcbaf8742f639edbfb96f15ee6efe3eed04`.
-Their MIT notice is retained in `licenses/Team-Drift-MIT.txt`. Our code adds
-cross-fitted item-probability pooling, solver calibration and Brier stacking.
-Beta conjugacy, Gaussian shrinkage and stacking are established methods.
-OpenAI Codex assisted development.
+The root runtime files and fitted payload match the submitted archive. Hidden item-level outcomes are withheld, and raw benchmark texts and response tables come from their original sources.
 
-Code is MIT licensed. Dataset source terms and the report template's notices
-remain applicable. Raw benchmark texts and response tables are obtained from
-their original sources rather than redistributed here.
+## Credits and license
+
+**Idrees Aziz** · [idrees.mustafa.aziz@gmail.com](mailto:idrees.mustafa.aziz@gmail.com)
+
+The logistic prior, feature hashing, and Gaussian baseline come from Alex Alvord / Cloud Lab Works LLC's [Team Drift implementation](https://github.com/cloudlabworks/aims-team-drift/tree/5a67dfcbaf8742f639edbfb96f15ee6efe3eed04). The [upstream MIT notice](licenses/Team-Drift-MIT.txt) is retained. This project adds cross-fitted item-probability pooling, solver calibration, and Brier stacking using established methods including Beta conjugacy and Gaussian shrinkage. OpenAI Codex assisted development.
+
+The code is [MIT licensed](LICENSE). Dataset source terms and the report template's notices still apply.
